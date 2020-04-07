@@ -32,7 +32,7 @@ class Msgowl
     public function __construct(String $token) {
         // create a new guzzle instance
         $this->client = new Client([
-            'base_uri' => $this->$api_url,
+            'base_uri' => $this->api_url,
             'headers' => [
                 'Authorization' => "bearer $token"
             ],
