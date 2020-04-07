@@ -17,9 +17,9 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": ">=5.5.9",
         "guzzlehttp/guzzle": "^6.5",
-        "illuminate/support": "^6.0"
+        "illuminate/support": "5.2.*"
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
