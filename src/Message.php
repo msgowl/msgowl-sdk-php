@@ -2,7 +2,7 @@
 
 namespace Icernn03\Msgowl;
 
-class Message
+class Message implements IMessage
 {
     /**
      * Mesasge body 
@@ -50,15 +50,24 @@ class Message
     }
 
     /**
+     * convert to an Array.
+     *
+     * @return Array 
+     */
+    public function toArray(): array {
+        return [
+            'body' => $this->body,
+            'sender_id' => $this->header,
+            'recipients' => $this->to,
+        ];
+    }
+
+    /**
      * convert to JSON.
      *
      * @return String 
      */
-    public function toJson() {
-        return json_encode([
-            'body' => $this->body,
-            'sender_id' => $this->header,
-            'recipients' => $this->to,
-        ]);
+    public function toJson(): string {
+        return json_encode($this->toArray());
     }
 }

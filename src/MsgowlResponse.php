@@ -19,12 +19,6 @@ class MsgowlResponse
     protected $status;
 
     /**
-     * Mesasge to 
-     * @var string
-    */
-    protected $to = [];
-
-    /**
      * Create a new instance.
      *
      * @param  GuzzleHttp\Psr7\Response $response

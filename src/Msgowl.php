@@ -2,11 +2,10 @@
 
 namespace Icernn03\Msgowl;
 
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Client;
-
-use Message;
-use MsgowlResponse;
+use GuzzleHttp\Psr7\Request;
 
 class Msgowl
 {
@@ -19,7 +18,7 @@ class Msgowl
     /**
      * Guzzle instance.
      *
-     * @var \GuzzleHttp\Client\Client
+     * @var \GuzzleHttp\Client
      */
     protected $client;
 
@@ -41,13 +40,32 @@ class Msgowl
     }
 
     /**
+     * submit API request
+     * @param \GuzzleHttp\Request $request
+     * @param Mixed $data
+     * @return \Icernn03\Msgowl\MsgowlResponse
+     */
+    public function submit(Request $request, $data) {
+        try {
+            $resp = $this->client->send($request, [ 'json' => $data ]);
+            return new MsgowlResponse($resp);
+        } catch (ClientException $e) {
+            return new MsgowlResponse($e->getResponse());
+        } catch (ServerException $e) {
+            return new MsgowlResponse($e->getResponse());
+        }
+    }
+
+
+    /**
      * Send a new message.
      *
      * @param  \Icernn03\Msgowl\Message  $message
      * @return \Icernn03\Msgowl\MsgowlResponse
      */
-    public function send(Message $message) {
-        $resp = $this->client->post($message);
-        return new MsgowlResponse($resp);
+    public function send(IMessage $message) {
+        $req = new Request('POST', '/messages');
+        $data = $message->toArray();
+        return $this->submit($req, $message->toArray());
     }
 }
