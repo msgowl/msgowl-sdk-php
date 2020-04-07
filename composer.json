@@ -1,0 +1,56 @@
+{
+    "name": "icernn03/msgowl-laravel",
+    "description": "Msgowl API SDK for Laravel",
+    "keywords": [
+        "icernn03",
+        "msgowl",
+        "laravel"
+    ],
+    "homepage": "https://github.com/icernn03/msgowl-laravel",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "icernn03",
+            "email": "icernn03@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Icernn03\\Msgowl\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Icernn03\\Msgowl\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Icernn03\\Msgowl\\MsgowlServiceProvider"
+            ],
+            "aliases": {
+                "Msgowl": "Icernn03\\Msgowl\\MsgowlFacade"
+            }
+        }
+    }
+}
