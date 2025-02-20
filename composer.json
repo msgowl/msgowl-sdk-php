@@ -1,12 +1,12 @@
 {
-    "name": "icernn03/msgowl-laravel",
-    "description": "Msgowl API SDK for Laravel",
+    "name": "msgowl/msgowl-sdk-php",
+    "description": "Msgowl SDK for PHP and Laravel",
     "keywords": [
         "icernn03",
         "msgowl",
         "laravel"
     ],
-    "homepage": "https://github.com/icernn03/msgowl-laravel",
+    "homepage": "https://github.com/msgowl/msgowl-sdk-php",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Icernn03\\Msgowl\\": "src"
+            "Msgowl\\MsgowlSDKPhp\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Icernn03\\Msgowl\\Tests\\": "tests"
+            "Msgowl\\MsgowlSDKPhp\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,10 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Icernn03\\Msgowl\\MsgowlServiceProvider"
+                "Msgowl\\MsgowlSDKPhp\\MsgowlServiceProvider"
             ],
             "aliases": {
-                "Msgowl": "Icernn03\\Msgowl\\MsgowlFacade"
+                "Msgowl": "Msgowl\\MsgowlSDKPhp\\MsgowlFacade"
             }
         }
     }

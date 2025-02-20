@@ -1,6 +1,6 @@
 <?php
 
-namespace Icernn03\Msgowl;
+namespace Msgowl\MsgowlSDKPhp;
 
 use Illuminate\Support\Facades\Facade;
 

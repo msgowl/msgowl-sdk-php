@@ -1,9 +1,9 @@
 <?php
 
-namespace Icernn03\Msgowl\Tests;
+namespace Msgowl\MsgowlSDKPhp\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Icernn03\Msgowl\MsgowlServiceProvider;
+use Msgowl\MsgowlSDKPhp\MsgowlServiceProvider;
 
 class ExampleTest extends TestCase
 {
