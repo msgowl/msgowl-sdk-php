@@ -8,4 +8,9 @@ class Msgowl
     {
         return new MsgowlAPI();
     }
+
+    public static function OTP()
+    {
+        return new MsgowlOTP();
+    }
 }
