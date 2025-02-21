@@ -19,6 +19,12 @@ class MsgowlResponse
     protected $status;
 
     /**
+     * Response reason 
+     * @var string
+    */
+    protected $reason;
+
+    /**
      * Create a new instance.
      *
      * @param  GuzzleHttp\Psr7\Response $response
@@ -36,7 +42,7 @@ class MsgowlResponse
      * @return Boolean
      */
     public function failed() {
-        return in_array($this->status, [200, 201]);
+        return !in_array($this->status, [200, 201]);
     }
 
     /**
