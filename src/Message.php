@@ -18,19 +18,19 @@ class Message implements IMessage
 
     /**
      * Mesasge to 
-     * @var string
+     * @var array
     */
     protected $to = [];
 
     /**
      * Create a new instance.
      *
-     * @param  String  $header
      * @param  String  $msg
+     * @param  String  $header
      * @return void
      */
-    public function __construct(String $header, String $msg) {
-        $this->header = $header;
+    public function __construct(String $msg, String $header) {
+        $this->header = $header?? config('sender_id');
         $this->body = $msg;
     }
 

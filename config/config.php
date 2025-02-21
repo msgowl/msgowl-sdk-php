@@ -5,5 +5,6 @@
  */
 return [
     'api_token' => env('MSGOWL_API_TOKEN', ''),
-    'otp_key' => env('MSGOWL_OTP_KEY')
+    'otp_key' => env('MSGOWL_OTP_KEY'),
+    'sender_id' => env('MSGOWL_SENDER_ID')
 ];
