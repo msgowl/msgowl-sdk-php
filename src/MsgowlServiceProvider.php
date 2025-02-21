@@ -22,7 +22,7 @@ class MsgowlServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('msgowl.php'),
-            ], 'config');
+            ], 'msgowl-config');
 
             // Publishing the views.
             /*$this->publishes([
