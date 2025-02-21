@@ -28,8 +28,9 @@ class Msgowl
      * @param  String  $token
      * @return void
      */
-    public function __construct(String $token) {
+    public function __construct() {
         // create a new guzzle instance
+        $token = config('msgowl.api_token');
         $this->client = new Client([
             'base_uri' => $this->api_url,
             'headers' => [
@@ -43,7 +44,7 @@ class Msgowl
      * submit API request
      * @param \GuzzleHttp\Request $request
      * @param Mixed $data
-     * @return \Icernn03\Msgowl\MsgowlResponse
+     * @return Msgowl\MsgowlSDKPhp\MsgowlResponse
      */
     public function submit(Request $request, $data) {
         try {
@@ -60,8 +61,8 @@ class Msgowl
     /**
      * Send a new message.
      *
-     * @param  \Icernn03\Msgowl\Message  $message
-     * @return \Icernn03\Msgowl\MsgowlResponse
+     * @param  Msgowl\MsgowlSDKPhp\Message  $message
+     * @return Msgowl\MsgowlSDKPhp\MsgowlResponse
      */
     public function send(IMessage $message) {
         $req = new Request('POST', '/messages');
