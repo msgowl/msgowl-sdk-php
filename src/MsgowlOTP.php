@@ -68,4 +68,15 @@ class MsgowlOTP
         $req = new Request('POST', '/send');
         return $this->submit($req, $message->toArray());
     }
+
+    /**
+     * Verify OTP message.
+     *
+     * @param  Msgowl\MsgowlSDKPhp\OTPMessage  $message
+     * @return Msgowl\MsgowlSDKPhp\MsgowlResponse
+     */
+    public function verify(IMessage $message) {
+        $req = new Request('POST', '/verify');
+        return $this->submit($req, $message->toArray());
+    }
 }
