@@ -29,10 +29,10 @@ class OTPMessage implements IMessage
      * @param  String  $msg
      * @return void
      */
-    public function __construct(String $phoneNumber, String $code = null, int $length = null) {
+    public function __construct(String $phoneNumber, ?int $length = null, ?String $code = null) {
         $this->phoneNumber = $phoneNumber;
-        $this->code = $code;
         $this->length = $length;
+        $this->code = $code;
     }
 
     /**
