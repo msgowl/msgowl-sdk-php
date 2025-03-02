@@ -48,9 +48,9 @@ class MsgowlResponse
     /**
      * get response data
      *
-     * @return String 
+     * @return String|Array 
      */
-    public function getBody() {
-        return json_decode($this->response->getBody());
+    public function getBody(bool $asArray = false) {
+        return json_decode($this->response->getBody(), $asArray);
     }
 }
