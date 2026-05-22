@@ -19,10 +19,10 @@
     "require": {
         "php": ">=7.2.5|^8.2",
         "guzzlehttp/guzzle": "^7.9",
-        "illuminate/support": "^11.0|^12.0"
+        "illuminate/support": "^11.0|^12.0|^13.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.11",
+        "orchestra/testbench": "^9.11|^10.0|^11.0",
         "phpunit/phpunit": "^11.5"
     },
     "autoload": {
